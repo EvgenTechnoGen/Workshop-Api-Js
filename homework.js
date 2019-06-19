@@ -7,3 +7,11 @@ function apiSearch(event) {
       const server = 'https://api.themoviedb.org/3/search/multi?api_key=ead41c3eaac089640f31601bd088ab4e&language=ru&query=' + searchText;
       requestApi(server);
 }
+
+searchForm.addEventListener('submit', apiSearch);
+
+function requestApi(url) {
+
+      const request = new XMLHttpRequest();
+      request.open('GET', url);
+      request.send();
